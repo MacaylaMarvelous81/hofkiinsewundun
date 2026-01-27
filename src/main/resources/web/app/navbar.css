@@ -1,0 +1,12 @@
+.navbar-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style: none;
+}
+
+.navbar-item {
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+}

@@ -1,0 +1,15 @@
+.footer {
+    margin-top: auto;
+
+    &::before {
+        content: "";
+        display: block;
+        background: url("./footer_border.png");
+        height: 9px;
+    }
+}
+
+.footer-content {
+    background: #0d141c99;
+    padding: 15px 25px 18px;
+}

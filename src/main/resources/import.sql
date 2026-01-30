@@ -1,0 +1,1 @@
+INSERT INTO Entry(id, type, name, summary, published, updated) VALUES (nextval('Entry_SEQ'), 0, 'Test Note', 'Summary field', '2026-01-28 05:02:00', '2026-01-28 05:02:00');

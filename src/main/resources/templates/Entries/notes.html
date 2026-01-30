@@ -1,0 +1,18 @@
+{#include base}
+    {#title}Notes{/}
+    <main class="content">
+        <header>
+            <h1>Notes</h1>
+            {#for entry in entries}
+                <article class="note h-entry">
+                    {#if entry.name}
+                        <h3>{entry.name}</h3>
+                    {/}
+                    {#if entry.summary}
+                        <p class="summary">{entry.summary}</p>
+                    {/}
+                </article>
+            {/}
+        </header>
+    </main>
+{/}

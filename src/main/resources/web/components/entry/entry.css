@@ -1,0 +1,9 @@
+.note {
+    background: #0d141c;
+    padding: 0.9em;
+    margin-bottom: 1em;
+}
+
+.summary {
+    font-style: italic;
+}

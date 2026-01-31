@@ -12,6 +12,9 @@
         </section>
         <section class="layout-section right">
             <h2>Notes</h2>
+            {#for note in notes}
+                {#entry entry=note}{/}
+            {/}
         </section>
     </main>
 {/}

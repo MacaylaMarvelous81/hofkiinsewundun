@@ -7,7 +7,7 @@
         {#if entry.summary}
             <p class="summary">{entry.summary}</p>
         {/}
-        <div class="e-content">{entry.htmlContent}</div>
+        <div class="e-content">{entry.safeHtmlContent.raw}</div>
         <span><a class="p-author" href="/">Jomar Milan</a> &bull; <a class="u-url u-uid" href="{uri:Entries.entry(entry.id)}"><time class="dt-published" datetime="{entry.published}">{entry.published.since}</time></a></span>
     </article>
     {/}

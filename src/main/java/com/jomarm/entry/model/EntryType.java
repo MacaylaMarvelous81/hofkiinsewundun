@@ -1,4 +1,4 @@
-package com.jomarm.entry;
+package com.jomarm.entry.model;
 
 public enum EntryType {
     NOTE

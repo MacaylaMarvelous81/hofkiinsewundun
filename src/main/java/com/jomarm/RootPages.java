@@ -1,7 +1,8 @@
 package com.jomarm;
 
-import com.jomarm.entry.Entry;
-import com.jomarm.entry.EntryType;
+import com.jomarm.actor.model.Actor;
+import com.jomarm.entry.model.Entry;
+import com.jomarm.entry.model.EntryType;
 import io.quarkiverse.renarde.Controller;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
@@ -12,12 +13,13 @@ import java.util.List;
 public class RootPages extends Controller {
     @CheckedTemplate
     static class Templates {
-        public static native TemplateInstance index(List<Entry> notes);
+        public static native TemplateInstance index(Actor actor, List<Entry> notes);
     }
 
     @Path("/")
     public TemplateInstance index() {
+        Actor actor = Actor.findLocal();
         List<Entry> notes = Entry.findByType(EntryType.NOTE);
-        return Templates.index(notes);
+        return Templates.index(actor, notes);
     }
 }

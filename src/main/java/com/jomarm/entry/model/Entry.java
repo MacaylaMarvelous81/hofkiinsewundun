@@ -1,11 +1,10 @@
-package com.jomarm.entry;
+package com.jomarm.entry.model;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import org.owasp.html.HtmlPolicyBuilder;
-import org.owasp.html.HtmlSanitizer;
 import org.owasp.html.PolicyFactory;
 
 import java.util.Date;
@@ -30,6 +29,7 @@ public class Entry extends PanacheEntity {
     public EntryType type;
     public String name;
     public String summary;
+    @Column(columnDefinition = "text")
     public String htmlContent;
     public Date published;
     public Date updated;

@@ -1,0 +1,10 @@
+<div class="profile h-card">
+    <img class="u-logo avatar" src="{actor.logo}">
+    <h1><a class="p-name u-url u-uid name-link" href="{actor.link}">{actor.name}</a></h1>
+    {#if actor.email}
+        <a class="u-email" href="mailto:{actor.email}">{actor.email}</a>
+    {/}
+    {#if actor.note}
+        <p class="p-note">{actor.note}</p>
+    {/}
+</div>

@@ -17,3 +17,8 @@
         text-decoration: underline;
     }
 }
+
+.chip-logo {
+    height: 1.2em;
+    vertical-align: middle;
+}

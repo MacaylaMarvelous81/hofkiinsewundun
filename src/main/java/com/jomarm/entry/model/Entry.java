@@ -1,5 +1,6 @@
 package com.jomarm.entry.model;
 
+import com.jomarm.actor.model.Actor;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,6 +32,8 @@ public class Entry extends PanacheEntity {
     public String summary;
     @Column(columnDefinition = "text")
     public String htmlContent;
+    @ManyToOne
+    public Actor author;
     public Date published;
     public Date updated;
     @ManyToOne

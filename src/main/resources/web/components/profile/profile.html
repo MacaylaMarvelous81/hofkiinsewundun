@@ -1,10 +1,26 @@
+{#when type}
+{#is 'profile'}
 <div class="profile h-card">
-    <img class="u-logo avatar" src="{actor.logo}">
-    <h1><a class="p-name u-url u-uid name-link" href="{actor.link}">{actor.name}</a></h1>
+    <img class="avatar u-logo" src="{actor.logo}">
+    <h1><a class="name-link p-name u-url u-uid" href="{actor.link}">{actor.name}</a></h1>
     {#if actor.email}
-        <a class="u-email" href="mailto:{actor.email}">{actor.email}</a>
+    <a class="u-email" href="mailto:{actor.email}">{actor.email}</a>
     {/}
     {#if actor.note}
-        <p class="p-note">{actor.note}</p>
+    <p class="p-note">{actor.note}</p>
     {/}
 </div>
+{/}
+{#is 'chip'}
+{! Consideration: https://indieweb.org/antipatterns#invisible_metadata
+Because this is dynamically rendered HTML, most of the drawbacks of invisible metadata
+such as dead/incorrect data is mitigated. Providing invisible metadata could make it
+easier for computers to obtain this information. However, not all of the information of
+the actor may be pertinent in every context, just the displayed information, so I decided
+not to include invisible metadata, at least for now. !}
+<span class="h-card">
+    <img class="chip-logo u-logo" src="{actor.logo}">
+    <a class="p-name u-url u-uid" href="{actor.link}">{actor.name}</a>
+</span>
+{/}
+{/}

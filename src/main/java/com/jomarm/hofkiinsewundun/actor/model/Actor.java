@@ -1,4 +1,4 @@
-package com.jomarm.actor.model;
+package com.jomarm.hofkiinsewundun.actor.model;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;

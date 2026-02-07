@@ -1,4 +1,4 @@
-package com.jomarm;
+package com.jomarm.hofkiinsewundun;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

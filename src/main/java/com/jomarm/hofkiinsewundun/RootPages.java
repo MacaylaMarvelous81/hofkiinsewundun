@@ -1,8 +1,8 @@
-package com.jomarm;
+package com.jomarm.hofkiinsewundun;
 
-import com.jomarm.actor.model.Actor;
-import com.jomarm.entry.model.Entry;
-import com.jomarm.entry.model.EntryType;
+import com.jomarm.hofkiinsewundun.actor.model.Actor;
+import com.jomarm.hofkiinsewundun.entry.model.Entry;
+import com.jomarm.hofkiinsewundun.entry.model.EntryType;
 import io.quarkiverse.renarde.Controller;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;

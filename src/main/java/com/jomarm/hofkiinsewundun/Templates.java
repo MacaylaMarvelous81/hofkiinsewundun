@@ -1,4 +1,4 @@
-package com.jomarm;
+package com.jomarm.hofkiinsewundun;
 
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;

@@ -1,7 +1,7 @@
-package com.jomarm.actor.rest;
+package com.jomarm.hofkiinsewundun.actor.rest;
 
-import com.jomarm.RootPages;
-import com.jomarm.actor.model.Actor;
+import com.jomarm.hofkiinsewundun.RootPages;
+import com.jomarm.hofkiinsewundun.actor.model.Actor;
 import io.quarkiverse.renarde.Controller;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{#insert title}Title{/}</title>
+    <title>{#insert title}Title{/insert}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {#bundle /}
 </head>
@@ -13,10 +13,18 @@
         <li><a class="navbar-item" href="{uri:Entries.notes()}">Notes</a></li>
     </ul>
 </nav>
-{#insert}{/}
+{#insert}{/insert}
 <footer class="footer">
     <div class="footer-content">
-        <p>Copyright &copy; 2026 Jomar Milan</p>
+        <p>Copyright &copy; 2026 Jomar Milan.</p>
+        {#if inject:user.isAnonymous}
+            <a href="{uri:Security.login()}">Log in</a>
+        {#else}
+            {#form uri:Security.logout()}
+                <span>Logged in as {inject:user.actor.name}</span>
+                <button type="submit">Log out</button>
+            {/form}
+        {/if}
     </div>
 </footer>
 </body>

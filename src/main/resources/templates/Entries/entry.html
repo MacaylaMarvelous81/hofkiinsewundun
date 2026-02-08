@@ -1,6 +1,12 @@
 {#include base}
-    {#title}{entry.name or "Jomar Milan on " + entry.published.format()}{/}
+    {#title}
+        {#if entry.name}
+            {entry.name}
+        {#else}
+            {entry.author.name} on {entry.published.format()}
+        {/if}
+    {/title}
     <main class="content">
-        {#entry entry}{/}
+        {#entry entry /}
     </main>
 {/}

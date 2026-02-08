@@ -1,0 +1,16 @@
+{#include base}
+    {#title}Login{/}
+    <main class="content">
+        <form action="/j_security_check" method="post">
+            <label for="j_username">User</label>
+            <select name="j_username" id="j_username" required>
+                {#for user in loginCandidates}
+                    <option value="{user.preferredUsername}">{user.name}</option>
+                {/}
+            </select>
+            <label for="j_password">Password</label>
+            <input type="password" placeholder="Password" name="j_password" required>
+            <button type="submit">Login</button>
+        </form>
+    </main>
+{/}

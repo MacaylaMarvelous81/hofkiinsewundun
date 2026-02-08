@@ -18,7 +18,7 @@ public class RootPages extends Controller {
 
     @Path("/")
     public TemplateInstance index() {
-        Actor actor = Actor.findLocal();
+        Actor actor = Actor.findLocal().getFirst();
         List<Entry> notes = Entry.findByType(EntryType.NOTE);
         return Templates.index(actor, notes);
     }

@@ -16,7 +16,9 @@
 {#insert}{/insert}
 <footer class="footer">
     <div class="footer-content">
-        <p>Copyright &copy; 2026 Jomar Milan.</p>
+        {#if config:['hofkiinsewundun.footer-message'].or(false)}
+            {config:['hofkiinsewundun.footer-message'].raw}
+        {/}
         {#if inject:user.isAnonymous}
             <a href="{uri:Security.login()}">Log in</a>
         {#else}

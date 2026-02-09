@@ -3,6 +3,9 @@
 <div class="profile h-card">
     <img class="avatar u-logo" src="{actor.logo}">
     <h1><a class="name-link p-name u-url u-uid" href="{actor.link}">{actor.name}</a></h1>
+    {#if !inject:user.isAnonymous && inject:user.actor.id == actor.id}
+    <a href="{uri:Actors.editSelf()}">Edit information</a>
+    {/if}
     {#if actor.email}
     <a class="u-email" href="mailto:{actor.email}">{actor.email}</a>
     {/}

@@ -1,0 +1,30 @@
+{#include base}
+    {#title}
+        {#if note}
+            {#if note.name}
+                Edit {note.name}
+            {#else}
+                Edit note on {note.published.format()}
+            {/if}
+        {#else}
+            New Note
+        {/if}
+    {/title}
+    <main class="content">
+        {#form (note ? uri:Entries.edit(note.id) : uri:Entries.createNote())}
+            <div>
+                <label for="name">Title</label>
+                <input type="text" name="name" id="name" value="{note.name ?: ''}">
+            </div>
+            <div>
+                <label for="summary">Summary</label>
+                <textarea name="summary" id="summary" rows="3" cols="30">{note.summary ?: ''}</textarea>
+            </div>
+            <div>
+                <label for="content">Content (HTML)</label>
+                <textarea name="content" id="content" rows="10" cols="50">{note.htmlContent ?: ''}</textarea>
+            </div>
+            <button type="submit">{#if note}Edit{#else}Publish{/if}</button>
+        {/form}
+    </main>
+{/include}

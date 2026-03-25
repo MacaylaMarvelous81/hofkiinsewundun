@@ -1,14 +1,22 @@
 {#when entry.type}
 {#is NOTE}
 <article class="note h-entry">
-    {#if entry.name}
-    <h3>{entry.name}</h3>
-    {/}
-    {#if entry.summary}
-    <p class="summary">{entry.summary}</p>
-    {/}
-    <div class="e-content">{entry.safeHtmlContent.raw}</div>
-    <span>{#profile actor=entry.author type='chip'}{/} &bull; <a class="u-url u-uid" href="{uri:Entries.entry(entry.id)}"><time class="dt-published" datetime="{entry.published}">{entry.published.since}</time></a></span>
+    <header>
+        {#if entry.name}
+        <h3>{entry.name}</h3>
+        {/if}
+        {#if entry.summary}
+        <p class="summary">{entry.summary}</p>
+        {/if}
+    </header>
+    <section class="e-content">{entry.safeHtmlContent.raw}</section>
+    <span>{#profile actor=entry.author type='chip' /} &bull; <a class="u-url u-uid" href="{uri:Entries.entry(entry.id)}"><time class="dt-published" datetime="{entry.published}">{entry.published.since}</time></a></span>
+    {#if entry.published != entry.updated}
+    <span>(Updated <time class="dt-updated" datetime="{entry.updated}">{entry.updated.since}</time>)</span>
+    {/if}
+    {#if !inject:user.isAnonymous && inject:user.actor.id == entry.author.id}
+    <a href="{uri:Entries.editNote(entry.id)}">Edit</a>
+    {/if}
 </article>
-{/}
-{/}
+{/is}
+{/when}

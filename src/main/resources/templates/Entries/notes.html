@@ -2,7 +2,12 @@
     {#title}Notes{/}
     <main class="content h-feed">
         <header>
-            <h1 class="p-name">Notes</h1>
+            <h1 class="p-name">
+                Notes
+                {#if !inject:user.isAnonymous}
+                    <a href="{uri:Entries.createNote()}">Create</a>
+                {/if}
+            </h1>
         </header>
         {#for entry in entries}
             {#entry entry}{/}

@@ -30,14 +30,18 @@ public class Entry extends PanacheEntity {
     public EntryType type;
     public String name;
     public String summary;
-    @Column(columnDefinition = "text")
-    public String htmlContent;
-    @ManyToOne
-    public Actor author;
     public Date published;
     public Date updated;
+
+    @Column(columnDefinition = "text")
+    public String htmlContent;
+
+    @ManyToOne
+    public Actor author;
+
     @ManyToOne
     public Entry replyTo;
+
     @Column(unique = true)
     public String legacyId;
 
@@ -46,7 +50,7 @@ public class Entry extends PanacheEntity {
     }
 
     public static List<Entry> findByType(EntryType type) {
-        return find("type = ?1 ORDER BY id", type).list();
+        return find("type = ?1 ORDER BY published desc", type).list();
     }
 
     public static Entry findByLegacyId(String legacyId) {

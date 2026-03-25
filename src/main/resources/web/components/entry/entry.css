@@ -2,6 +2,10 @@
     background: #0d141c;
     padding: 0.9em;
     margin-bottom: 1em;
+
+    :first-child {
+        margin-top: 0;
+    }
 }
 
 .summary {
